@@ -23,7 +23,10 @@ with open(bank_csv) as csvfile:
         counter = counter+1
         # add loss/profit to running total
         total_change = total_change + int(row[1])
+#zip dates and changes together
+full_data = zip(dates, changes)
+#find avg month net +/-
 avg_month = total_change/counter
-print(avg_month)
-print(counter)
-print(total_change)
+#find best and worst increase/decrease
+best_month = max(changes)
+worst_month = min(changes)

@@ -9,6 +9,7 @@ profits = []
 losses = []
 #Variables for loops
 counter = 0
+total_change = 0
 # Open the data
 with open(bank_csv) as csvfile:
     bankreader = csv.reader(csvfile, delimiter=",")
@@ -20,4 +21,9 @@ with open(bank_csv) as csvfile:
         changes.append(row[1])
         # increase counter to find number of months
         counter = counter+1
-    
+        # add loss/profit to running total
+        total_change = total_change + int(row[1])
+avg_month = total_change/counter
+print(avg_month)
+print(counter)
+print(total_change)

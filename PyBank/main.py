@@ -31,7 +31,8 @@ avg_month = total_change/counter
 best_month = max(changes)
 worst_month = min(changes)
 #find best worst month date
-best_month_date = dates[full_data.index(best_month)]
+#this does not work and i dont know why
+best_month_date = [dates for changes in full_data if changes == best_month]
 worst_month_date = [dates for changes in full_data if changes == worst_month]
 # print
 print("Financial Analysis")
@@ -41,5 +42,15 @@ print("Total: $" + str(total_change))
 print("Average Change: $" + str(avg_month))
 print("Greatest Increase in Profits: " + str(best_month_date) + " ($" + str(best_month) + ")")
 print("Worst Decrease in Profits: " + str(worst_month_date) + " ($" + str(worst_month) + ")")
-#export
-output 
+#export location
+output_text = os.path.join("analysis", "analysis.txt")
+with open(output_text, "w") as text:
+    text.write("----------------------------\n")
+    text.write("  Financial Analysis"+ "\n")
+    text.write("----------------------------\n\n")
+    text.write("    Total Months: " + str(counter) + "\n")
+    text.write("    Total Profits: " + "$" + str(total_change) +"\n")
+    text.write("    Average Change: " + '$' + str(int(avg_month)) + "\n")
+    text.write("    Greatest Increase in Profits: " + str(best_month_date) + " ($" + str(best_month) + ")\n")
+    text.write("    Greatest Decrease in Profits: " + str(worst_month_date) + " ($" + str(worst_month) + ")\n")
+    text.write("---------------------------\n")

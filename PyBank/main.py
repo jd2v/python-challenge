@@ -31,6 +31,15 @@ avg_month = total_change/counter
 best_month = max(changes)
 worst_month = min(changes)
 #find best worst month date
-best_month_date = [dates for changes in full_data if changes == best_month]
+best_month_date = dates[full_data.index(best_month)]
 worst_month_date = [dates for changes in full_data if changes == worst_month]
-
+# print
+print("Financial Analysis")
+print("-------------------------")
+print("Total Months: " + str(counter))
+print("Total: $" + str(total_change))
+print("Average Change: $" + str(avg_month))
+print("Greatest Increase in Profits: " + str(best_month_date) + " ($" + str(best_month) + ")")
+print("Worst Decrease in Profits: " + str(worst_month_date) + " ($" + str(worst_month) + ")")
+#export
+output 

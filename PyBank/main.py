@@ -30,3 +30,7 @@ avg_month = total_change/counter
 #find best and worst increase/decrease
 best_month = max(changes)
 worst_month = min(changes)
+#find best worst month date
+best_month_date = [dates for changes in full_data if changes == best_month]
+worst_month_date = [dates for changes in full_data if changes == worst_month]
+

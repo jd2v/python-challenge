@@ -34,3 +34,9 @@ khan_votes_percent = (khan_votes/total_vote_counter)*100
 correy_votes_percent = (correy_votes/total_vote_counter)*100
 li_votes_percent = (li_votes/total_vote_counter)*100
 otooley_votes_percent = (otooley_votes/total_vote_counter)*100
+#round cand votes
+khan_votes_percent = round(khan_votes_percent)
+correy_votes_percent = round(correy_votes_percent)
+li_votes_percent = round(li_votes_percent)
+otooley_votes_percent = round(otooley_votes_percent)
+ 
